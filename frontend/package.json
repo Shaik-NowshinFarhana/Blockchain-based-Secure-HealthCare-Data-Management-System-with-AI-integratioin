@@ -9,6 +9,13 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "start": "serve -s dist -l $PORT"
+}
   "dependencies": {
     "buffer": "^6.0.3",
     "eciesjs": "^0.4.17",
