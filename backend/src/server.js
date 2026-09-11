@@ -15,9 +15,12 @@ const complaintRoutes = require("./routes/complaintRoutes");
 const app = express();
 
 connectDB();
-
+const allowedOrigins = (process.env.CORS_ORIGINS ?? "http://localhost:5173").split(",");
 app.use(cors());
 app.use(express.json());
+
+// Railway pings this to know the server is up
+app.get("/health", (_req, res) => res.json({ ok: true }));
 
 app.use("/api/users",    userRoutes);
 app.use("/api/doctors",  doctorRoutes);
